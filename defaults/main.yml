@@ -31,6 +31,11 @@ bitbucket_jvm_support_recommended_args: "-Datlassian.plugins.enable.wait=300 -XX
 # Session timeout.
 bitbucket_session_timeout: "30"
 
+# Crowd SSO
+# before enabling the Bitbucket instance has to be configured for Crowd!
+# see https://confluence.atlassian.com/bitbucketserver/connecting-bitbucket-server-to-crowd-776640399.html
+bitbucket_crowdsso_enabled: "false"
+
 # URL for download archives.
 bitbucket_version: "6.2.1"
 bitbucket_download:

@@ -170,6 +170,14 @@
     - { dest: "/opt/atlassian/bitbucket/bin/stop-bitbucket.sh", owner: "bitbucket", group: "bitbucket", mode: "0755" }
   tags: bitbucket
 
+- name: set Crowd SSO
+  lineinfile:
+    path: "/var/atlassian/application-data/bitbucket/shared/bitbucket.properties"
+    insertafter: EOF
+    line: "plugin.auth-crowd.sso.enabled={{ bitbucket_crowdsso_enabled }}"
+    state: present
+  tags: bitbucket
+
 - name: set version
   file:
     dest: "/opt/atlassian/bitbucket/version_{{ bitbucket_version }}"
